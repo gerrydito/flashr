@@ -256,7 +256,7 @@ calc_ebnm_l_args = function(data, f, k, subset, any_fixed, Rk) {
     return(NULL)
   }
 
-  x = ((Rk * tau) %*% f$EF[, k]) * s2
+  x = (as.matrix(Rk * tau) %*% f$EF[, k]) * s2
 
   # Avoid NaNs when s2 is infinite (in which case the value of x
   #   doesn't matter).
